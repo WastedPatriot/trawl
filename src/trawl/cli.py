@@ -9,6 +9,7 @@ from rich.markup import escape
 
 from trawl import __version__
 from trawl.config import load_config, resolve_config_path
+from trawl.easter import show_catch
 from trawl.errors import TrawlError
 from trawl.report import write_reports
 from trawl.runner import run_scan, tools_all_skipped
@@ -34,6 +35,9 @@ def main(argv: list[str] | None = None, console: Console | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     console = console or make_console()
+    if args.catch_of_the_day:
+        show_catch(console)
+        return 0
     try:
         return _run(args, console)
     except TrawlError as exc:
@@ -94,6 +98,7 @@ def build_parser() -> argparse.ArgumentParser:
         help="show tool stderr when something fails",
     )
     parser.add_argument("--version", action="version", version=f"trawl {__version__}")
+    parser.add_argument("--catch-of-the-day", action="store_true", help=argparse.SUPPRESS)
     return parser
 
 
