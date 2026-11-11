@@ -177,6 +177,6 @@ The HTML report, and the markdown one, end with an HTML comment. That's the whol
 
 ## Before you point it at anything
 
-[ETHICS.md](ETHICS.md). Machines you own, a lab you were given, or an HTB box on the HTB network. The scope file is a seatbelt, not a lawyer.
+[ETHICS.md](ETHICS.md). Machines you own, a lab you were given, or an HTB box on the HTB network. The scope file is a seatbelt, not a lawyer. If something's wrong with the tool itself, [SECURITY.md](SECURITY.md).
 
 MIT, see [LICENSE](LICENSE).
