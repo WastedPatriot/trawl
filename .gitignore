@@ -11,3 +11,14 @@ venv/
 trawl-out/
 .DS_Store
 *.swp
+
+# local secrets, if any wander in
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+credentials.json
+*.kdbx
+secrets.*
