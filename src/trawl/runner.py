@@ -214,6 +214,9 @@ def _run_nuclei(
     found = []
     if out_path.is_file():
         found = parse_nuclei_jsonl(out_path.read_text(encoding="utf-8", errors="replace"))
+        if cfg.nuclei.severity:
+            allowed = set(cfg.nuclei.severity)
+            found = [item for item in found if item.severity in allowed]
     added = _extend_findings(report, found)
     report.counts["nuclei"] = report.counts.get("nuclei", 0) + added
     if code != 0:
