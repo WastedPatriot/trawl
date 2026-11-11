@@ -156,7 +156,11 @@ def _apply(cfg: Config, raw: dict, path: Path) -> None:
 
 
 def _apply_nmap(opts: NmapOptions, raw: dict) -> None:
-    _reject_unknown(raw, {"top_ports", "timing", "skip_ping", "service_detection", "scripts", "extra"}, "nmap")
+    _reject_unknown(
+        raw,
+        {"top_ports", "timing", "skip_ping", "service_detection", "scripts", "extra"},
+        "nmap",
+    )
     if "top_ports" in raw:
         opts.top_ports = _as_int(raw["top_ports"], "nmap.top_ports")
     if "timing" in raw:

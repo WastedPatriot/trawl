@@ -1,0 +1,6 @@
+{"template":"http/exposures/configs/git-config.yaml","template-id":"git-config","info":{"name":"Git Config Disclosure","author":["example"],"tags":["git","exposure"],"description":"A .git/config file is sitting on the web root.","severity":"medium"},"type":"http","host":"http://storage.htb","port":"80","matched-at":"http://storage.htb/.git/config","ip":"10.10.11.42","timestamp":"2024-10-27T09:30:00.000000Z"}
+this line is nuclei being chatty and should be ignored
+
+{"template":"http/misconfiguration/apache-outdated.yaml","template-id":"apache-outdated-version","info":{"name":"Apache Version Out of Date","author":["example"],"tags":"apache,tech","description":"The Server header says Apache 2.4.49, which is older than anyone wants in a lab writeup.","severity":"high"},"type":"http","host":"http://storage.htb:8080","matched-at":"http://storage.htb:8080/","ip":"10.10.11.42","timestamp":"2024-10-27T09:30:02.000000Z"}
+{ this is not json
+{"template-id":"http-missing-security-headers","info":{"name":"HTTP Missing Security Headers","tags":["headers","misconfig"],"severity":"info","description":"A few of the usual headers are absent."},"host":"http://storage.htb","matched-at":"http://storage.htb"}

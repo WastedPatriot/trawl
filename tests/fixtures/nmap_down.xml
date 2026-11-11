@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<nmaprun scanner="nmap" args="nmap -sV -Pn -oX down.xml 10.10.11.99" start="1730000100" version="7.94" xmloutputversion="1.05">
+<host starttime="1730000100" endtime="1730000102">
+<status state="down" reason="user-set" reason_ttl="0"/>
+<address addr="10.10.11.99" addrtype="ipv4"/>
+<hostnames></hostnames>
+<ports></ports>
+</host>
+<runstats><finished time="1730000102" elapsed="2.00"/><hosts up="0" down="1" total="1"/></runstats>
+</nmaprun>

@@ -1,0 +1,5 @@
+{
+  "commandline": "ffuf -u http://storage.htb/FUZZ -w common.txt -of json -o empty.json",
+  "time": "2024-10-27T09:20:00Z",
+  "results": []
+}

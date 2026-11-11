@@ -1,0 +1,38 @@
+{
+  "commandline": "ffuf -u http://storage.htb/FUZZ -w common.txt -of json -o storage.json",
+  "time": "2024-10-27T09:12:00Z",
+  "results": [
+    {
+      "input": {"FUZZ": "admin"},
+      "position": 12,
+      "status": 401,
+      "length": 456,
+      "words": 28,
+      "lines": 12,
+      "content-type": "text/html",
+      "redirectlocation": "",
+      "url": "http://storage.htb/admin"
+    },
+    {
+      "input": {"FUZZ": "backup"},
+      "position": 40,
+      "status": 301,
+      "length": 178,
+      "words": 6,
+      "lines": 8,
+      "redirectlocation": "http://storage.htb/backup/",
+      "url": "http://storage.htb/backup"
+    },
+    {
+      "input": {"FUZZ": ".git/HEAD"},
+      "position": 2,
+      "status": 200,
+      "length": 23,
+      "words": 2,
+      "lines": 1,
+      "content-type": "text/plain",
+      "redirectlocation": "",
+      "url": "http://storage.htb/.git/HEAD"
+    }
+  ]
+}
