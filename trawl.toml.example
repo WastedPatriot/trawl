@@ -1,0 +1,32 @@
+# Copy to ./trawl.toml or ~/.config/trawl/config.toml
+# Flags beat the file. Unknown keys are refused, so typos don't get ignored.
+
+output_dir = "trawl-out"
+# scope_file = "scope.txt"
+require_scope = false
+# Per tool, in seconds. 0 means wait forever.
+timeout = 1800
+
+[nmap]
+top_ports = 1000
+timing = "T4"
+# HTB boxes often ignore ping.
+skip_ping = true
+service_detection = true
+# -sC. Off until you ask.
+scripts = false
+# extra = ["--version-intensity", "5"]
+
+[ffuf]
+wordlist = "/usr/share/seclists/Discovery/Web-Content/common.txt"
+threads = 40
+extensions = ["php", "html", "txt"]
+filter_codes = [404]
+match_codes = "200,204,301,302,307,401,403"
+# 0 means no -rate flag.
+rate = 0
+
+[nuclei]
+severity = ["medium", "high", "critical"]
+rate_limit = 150
+# templates = ["/opt/nuclei-templates/http/exposures"]
